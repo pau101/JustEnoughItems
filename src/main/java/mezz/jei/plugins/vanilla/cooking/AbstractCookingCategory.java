@@ -21,14 +21,14 @@ import net.minecraft.util.text.TranslationTextComponent;
 public abstract class AbstractCookingCategory<T extends AbstractCookingRecipe> extends FurnaceVariantCategory<T> {
 	private final IDrawable background;
 	private final IDrawable icon;
-	private final String localizedName;
+	private final String translationKey;
 	protected final IDrawableAnimated arrow;
 
 	public AbstractCookingCategory(IGuiHelper guiHelper, Block icon, String translationKey, int regularCookTime) {
 		super(guiHelper);
 		background = guiHelper.createDrawable(Constants.RECIPE_GUI_VANILLA, 0, 114, 82, 54);
 		this.icon = guiHelper.createDrawableIngredient(new ItemStack(icon));
-		localizedName = Translator.translateToLocal(translationKey);
+		this.translationKey = translationKey;
 		arrow = guiHelper.drawableBuilder(Constants.RECIPE_GUI_VANILLA, 82, 128, 24, 17)
 			.buildAnimated(regularCookTime, IDrawableAnimated.StartDirection.LEFT, false);
 	}
@@ -66,7 +66,7 @@ public abstract class AbstractCookingCategory<T extends AbstractCookingRecipe> e
 
 	@Override
 	public String getTitle() {
-		return localizedName;
+		return Translator.translateToLocal(translationKey);
 	}
 
 	@Override

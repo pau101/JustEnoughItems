@@ -29,13 +29,11 @@ public class IngredientInfoRecipeCategory implements IRecipeCategory<IngredientI
 	private final IDrawable background;
 	private final IDrawable icon;
 	private final IDrawable slotBackground;
-	private final String localizedName;
 
 	public IngredientInfoRecipeCategory(IGuiHelper guiHelper, Textures textures) {
 		background = guiHelper.createBlankDrawable(recipeWidth, recipeHeight);
 		icon = textures.getInfoIcon();
 		slotBackground = guiHelper.getSlotDrawable();
-		localizedName = Translator.translateToLocal("gui.jei.category.itemInformation");
 	}
 
 	@Override
@@ -50,7 +48,7 @@ public class IngredientInfoRecipeCategory implements IRecipeCategory<IngredientI
 
 	@Override
 	public String getTitle() {
-		return localizedName;
+		return Translator.translateToLocal("gui.jei.category.itemInformation");
 	}
 
 	@Override

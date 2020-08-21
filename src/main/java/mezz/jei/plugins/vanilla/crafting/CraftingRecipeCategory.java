@@ -41,7 +41,6 @@ public class CraftingRecipeCategory implements IExtendableRecipeCategory<ICrafti
 
 	private final IDrawable background;
 	private final IDrawable icon;
-	private final String localizedName;
 	private final ICraftingGridHelper craftingGridHelper;
 	private final IModIdHelper modIdHelper;
 	private final ExtendableRecipeCategoryHelper<IRecipe<?>, ICraftingCategoryExtension> extendableHelper = new ExtendableRecipeCategoryHelper<>(ICraftingRecipe.class);
@@ -51,7 +50,6 @@ public class CraftingRecipeCategory implements IExtendableRecipeCategory<ICrafti
 		ResourceLocation location = Constants.RECIPE_GUI_VANILLA;
 		background = guiHelper.createDrawable(location, 0, 60, width, height);
 		icon = guiHelper.createDrawableIngredient(new ItemStack(Blocks.CRAFTING_TABLE));
-		localizedName = Translator.translateToLocal("gui.jei.category.craftingTable");
 		craftingGridHelper = guiHelper.createCraftingGridHelper(craftInputSlot1);
 	}
 
@@ -67,7 +65,7 @@ public class CraftingRecipeCategory implements IExtendableRecipeCategory<ICrafti
 
 	@Override
 	public String getTitle() {
-		return localizedName;
+		return Translator.translateToLocal("gui.jei.category.craftingTable");
 	}
 
 	@Override

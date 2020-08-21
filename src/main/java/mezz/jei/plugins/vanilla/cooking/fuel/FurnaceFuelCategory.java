@@ -22,7 +22,6 @@ import net.minecraft.util.text.ITextComponent;
 public class FurnaceFuelCategory extends FurnaceVariantCategory<FuelRecipe> {
 	private final IDrawableStatic background;
 	private final IDrawableStatic flameTransparentBackground;
-	private final String localizedName;
 
 	public FurnaceFuelCategory(IGuiHelper guiHelper, Textures textures) {
 		super(guiHelper);
@@ -31,7 +30,6 @@ public class FurnaceFuelCategory extends FurnaceVariantCategory<FuelRecipe> {
 			.build();
 
 		flameTransparentBackground = textures.getFlameIcon();
-		localizedName = Translator.translateToLocal("gui.jei.category.fuel");
 	}
 
 	@Override
@@ -51,7 +49,7 @@ public class FurnaceFuelCategory extends FurnaceVariantCategory<FuelRecipe> {
 
 	@Override
 	public String getTitle() {
-		return localizedName;
+		return Translator.translateToLocal("gui.jei.category.fuel");
 	}
 
 	@Override

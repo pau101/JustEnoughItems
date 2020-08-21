@@ -30,14 +30,12 @@ public class StoneCuttingRecipeCategory implements IExtendableRecipeCategory<Sto
 
     private final IDrawable background;
     private final IDrawable icon;
-    private final String localizedName;
 
     private final ExtendableRecipeCategoryHelper<IRecipe<?>, ICraftingCategoryExtension> extendableHelper = new ExtendableRecipeCategoryHelper<>(StonecuttingRecipe.class);
     public StoneCuttingRecipeCategory(IGuiHelper guiHelper) {
         ResourceLocation location = Constants.RECIPE_GUI_VANILLA;
         background = guiHelper.createDrawable(location, 0, 220, width, height);
         icon = guiHelper.createDrawableIngredient(new ItemStack(Blocks.STONECUTTER));
-        localizedName = Translator.translateToLocal("gui.jei.category.stoneCutter");
     }
 
     @Override
@@ -57,7 +55,7 @@ public class StoneCuttingRecipeCategory implements IExtendableRecipeCategory<Sto
 
     @Override
     public String getTitle() {
-        return localizedName;
+        return Translator.translateToLocal("gui.jei.category.stoneCutter");
     }
 
     @Override

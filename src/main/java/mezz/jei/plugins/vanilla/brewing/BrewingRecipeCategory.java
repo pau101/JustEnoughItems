@@ -33,7 +33,6 @@ public class BrewingRecipeCategory implements IRecipeCategory<JeiBrewingRecipe> 
 	private final IDrawable background;
 	private final IDrawable icon;
 	private final IDrawable slotDrawable;
-	private final String localizedName;
 	private final IDrawableAnimated arrow;
 	private final IDrawableAnimated bubbles;
 	private final IDrawableStatic blazeHeat;
@@ -44,7 +43,6 @@ public class BrewingRecipeCategory implements IRecipeCategory<JeiBrewingRecipe> 
 			.addPadding(1, 0, 0, 50)
 			.build();
 		icon = guiHelper.createDrawableIngredient(new ItemStack(Blocks.BREWING_STAND));
-		localizedName = Translator.translateToLocal("gui.jei.category.brewing");
 
 		arrow = guiHelper.drawableBuilder(location, 64, 0, 9, 28)
 			.buildAnimated(400, IDrawableAnimated.StartDirection.TOP, false);
@@ -70,7 +68,7 @@ public class BrewingRecipeCategory implements IRecipeCategory<JeiBrewingRecipe> 
 
 	@Override
 	public String getTitle() {
-		return localizedName;
+		return Translator.translateToLocal("gui.jei.category.brewing");
 	}
 
 	@Override
